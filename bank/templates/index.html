@@ -57,9 +57,13 @@
                                     </nav>
                                 </div>
                                 {% if user.is_authenticated %}
+                                <div class="col-lg-1">
                                 <div class="header-right-btn f-right d-none d-lg-block">
                                         <a href="/logout" class="btn header-btn">{{user.username}}</a>
                                     </div>
+                                </div>
+                                    <div class="header-right-btn f-right d-none d-lg-block">
+                                        <a href="/logout" class="btn header-btn">Logout</a>
                                 {% else %}
                                 <div class="col-lg-1">
                                     <div class="header-right-btn f-right d-none d-lg-block">
