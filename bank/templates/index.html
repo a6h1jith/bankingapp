@@ -1,0 +1,423 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>SBK - Bank </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="site.webmanifest">
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}">
+
+		<!-- CSS here -->
+            <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+            <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+            <link rel="stylesheet" href="{% static 'assets/css/slicknav.css' %}">
+            <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+            <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+            <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+            <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+            <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+            <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+            <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+            <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+   </head>
+
+   <body>
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparent">
+                <div class="main-header  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-2 col-md-1">
+                                <div class="logo">
+                                    <a href="#"><img src="{% static 'assets/img/logo/SBK-logo2.png' %}" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-10">
+                            <div class="menu-main d-flex align-items-center justify-content-end">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav> 
+                                        <ul id="navigation">  
+                                            <li class="active"><a href="#">Home</a></li>
+                                            <li><a href="#">District</a>
+                                                <ul class="submenu">
+                                                    <li><a href="https://en.wikipedia.org/wiki/Palakkad_district">Palakkad</a></li>
+                                                    <li><a href="https://en.wikipedia.org/wiki/Thrissur_district">Thrissur</a></li>
+                                                    <li><a href="https://en.wikipedia.org/wiki/Ernakulam_district">Ernakulam</a></li>
+                                                    <li><a href="https://en.wikipedia.org/wiki/Alappuzha_district">Alappuzha</a></li>
+                                                    <li><a href="https://en.wikipedia.org/wiki/Thiruvananthapuram_district">Trivandrum</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                {% if user.is_authenticated %}
+                                <div class="header-right-btn f-right d-none d-lg-block">
+                                        <a href="/logout" class="btn header-btn">{{user.username}}</a>
+                                    </div>
+                                {% else %}
+                                <div class="col-lg-1">
+                                    <div class="header-right-btn f-right d-none d-lg-block">
+                                        <a href="/login" class="btn header-btn">Login</a>
+                                    </div>
+                                </div>
+                                <div class="header-right-btn f-right d-none d-lg-block">
+                                    <a href="/register" class="btn header-btn">Register</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                            </div>   
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+
+        <!-- slider Area Start-->
+        <div class="slider-area slider-height" <p style="background-image: url('{% static 'assets/img/hero/h1_hero.jpg' %}');">>
+            <div class="slider-active">
+                <!-- Single Slider -->
+                <div class="single-slider">
+                    <div class="slider-cap-wrapper">
+                        <div class="hero__caption">
+                            <p data-animation="fadeInLeft" data-delay=".2s">State Bank of Kerala Provides</p>
+                            <h1 data-animation="fadeInLeft" data-delay=".5s">Small Business Loans For Daily Expenses.</h1>
+                            <!-- Hero Btn -->
+                            <a href="#" class="btn hero-btn" data-animation="fadeInLeft" data-delay=".8s">Apply for Loan</a>
+                        </div>
+                        <div class="hero__img">
+                            <img src="{% static 'assets/img/hero/hero_img.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- slider-footer Start -->
+            <div class="slider-footer section-bg d-none d-sm-block">
+                <div class="footer-wrapper">
+                    <!-- single -->
+                    <div class="single-caption">
+                        <div class="single-img">
+                            <img src="{% static 'assets/img/hero/hero_footer.png' %}" alt="">
+                        </div>
+                    </div>
+                    <!-- single -->
+                    <div class="single-caption">
+                        <div class="caption-icon">
+                            <span class="flaticon-clock"></span>
+                        </div>
+                        <div class="caption">
+                            <p>Quick & Easy Loan</p>
+                            <p>Approvals</p>
+                        </div>
+                    </div>
+                    <!-- single -->
+                    <div class="single-caption">
+                        <div class="caption-icon">
+                            <span class="flaticon-like"></span>
+                        </div>
+                        <div class="caption">
+                            <p>Quick & Easy Loan</p>
+                            <p>Approvals</p>
+                        </div>
+                    </div>
+                    <!-- single -->
+                    <div class="single-caption">
+                        <div class="caption-icon">
+                            <span class="flaticon-money"></span>
+                        </div>
+                        <div class="caption">
+                            <p>Quick & Easy Loan</p>
+                            <p>Approvals</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- slider-footer End -->
+
+        </div>
+        <!-- slider Area End-->
+        <!-- Services Area Start -->
+        <div class="services-area pt-150 pb-150" <p style="background-image: url('{% static 'assets/img/gallery/section_bg02.jpg' %}');"> >
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-10">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle text-center mb-80">
+                            <span>Services that we are providing</span>
+                            <h2>High Performance Services For All Industries.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-cat text-center mb-50">
+                            <div class="cat-icon">
+                                <span class="flaticon-work"></span>
+                            </div>
+                            <div class="cat-cap">
+                                <h5><a href="services.html">Business Loan</a></h5>
+                                <p>Consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-cat text-center mb-50">
+                            <div class="cat-icon">
+                                <span class="flaticon-loan"></span>
+                            </div>
+                            <div class="cat-cap">
+                                <h5><a href="services.html">Commercial Loans</a></h5>
+                                <p>Consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-cat text-center mb-50">
+                            <div class="cat-icon">
+                                <span class="flaticon-loan-1"></span>
+                            </div>
+                            <div class="cat-cap">
+                                <h5><a href="services.html">Construction Loans</a></h5>
+                                <p>Consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-cat text-center mb-50">
+                            <div class="cat-icon">
+                                <span class="flaticon-like"></span>
+                            </div>
+                            <div class="cat-cap">
+                                <h5><a href="services.html">Business Loan</a></h5>
+                                <p>Consectetur adipisicing elit, sed doeiusmod tempor incididunt ut labore et dolore</p>
+                            </div>
+                        </div>
+                    </div>
+
+                 </div>
+            </div>
+        </div>
+        <!-- Services Area End -->
+        <!--Team Ara Start -->
+        <div class="team-area section-padding30">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="cl-xl-7 col-lg-8 col-md-10">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle text-center mb-70">
+                            <span>Our Loan Section Team Mambers</span>
+                            <h2>Take a look to our professional team members.</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-team mb-30">
+                            <div class="team-img">
+                                <img src="{% static 'assets/img/gallery/home_blog1.png' %}" alt="">
+                                <!-- Blog Social -->
+                                <div class="team-social">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-globe"></i></a></li>
+                                </div>
+                            </div>
+                            <div class="team-caption">
+                                <h3><a href="#">Bruce</a></h3>
+                                <p>Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-team mb-30">
+                            <div class="team-img">
+                                <img src="{% static 'assets/img/gallery/home_blog2.png' %}" alt="">
+                                <!-- Blog Social -->
+                                <div class="team-social">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-globe"></i></a></li>
+                                </div>
+                            </div>
+                            <div class="team-caption">
+                                <h3><a href="#">Albert</a></h3>
+                                <p>Assistant Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-team mb-30">
+                            <div class="team-img">
+                                <img src="{% static 'assets/img/gallery/home_blog3.png' %}" alt="">
+                                <!-- Blog Social -->
+                                <div class="team-social">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-globe"></i></a></li>
+                                </div>
+                            </div>
+                            <div class="team-caption">
+                                <h3><a href="#">Simon</a></h3>
+                                <p>Relationship Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-team mb-30">
+                            <div class="team-img">
+                                <img src="{% static 'assets/img/gallery/home_blog4.png' %}" alt="">
+                                <!-- Blog Social -->
+                                <div class="team-social">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-globe"></i></a></li>
+                                </div>
+                            </div>
+                            <div class="team-caption">
+                                <h3><a href="#">David</a></h3>
+                                <p>Auditor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team Ara End -->
+    </main>
+    <footer>
+        <!-- Footer Start-->
+        <div class="footer-area">
+            <div class="container">
+               <div class="footer-top footer-padding">
+                    <div class="row justify-content-between">
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="single-footer-caption mb-30">
+                                    <!-- logo -->
+                                    <div class="footer-logo">
+                                        <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                                    </div>
+                                    <div class="footer-pera">
+                                        <p>Heaven fruitful doesn't over lesser days appear creeping seasons so behold bearing</p>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Quick Link</h4>
+                                    <ul>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Offers & Discounts</a></li>
+                                        <li><a href="#">Get Coupon</a></li>
+                                        <li><a href="#"> Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>New Products</h4>
+                                    <ul>
+                                        <li><a href="#">Woman Cloth</a></li>
+                                        <li><a href="#">Fashion Accessories</a></li>
+                                        <li><a href="#">Man Accessories</a></li>
+                                        <li><a href="#">Rubber made Toys</a></li>     
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Support</h4>
+                                    <ul>
+                                        <li><a href="#">Frequently Asked Questions</a></li>
+                                        <li><a href="#">Terms & Conditions</a></li>
+                                        <li><a href="#"> Privacy Policy</a></li>
+                                        <li><a href="#">Report a Payment Issue</a></li>     
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+                <div class="footer-bottom">
+                    <div class="row d-flex justify-content-between align-items-center">
+                        <div class="col-xl-9 col-lg-8">
+                            <div class="footer-copy-right">
+                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4">
+                            <!-- Footer Social -->
+                            <div class="footer-social f-right">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+    <!-- Scroll Up -->
+    <div id="back-top" >
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+
+    <!-- JS here -->
+		<!-- All JS Custom Plugins Link Here here -->
+        <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+		<!-- Jquery, Popper, Bootstrap -->
+		<script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="./assets/js/popper.min.js"></script>
+        <script src="./assets/js/bootstrap.min.js"></script>
+	    <!-- Jquery Mobile Menu -->
+        <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+		<!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="./assets/js/owl.carousel.min.js"></script>
+        <script src="./assets/js/slick.min.js"></script>
+		<!-- One Page, Animated-HeadLin -->
+        <script src="./assets/js/wow.min.js"></script>
+		<script src="./assets/js/animated.headline.js"></script>
+        <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+		<!-- Nice-select, sticky -->
+        <script src="./assets/js/jquery.nice-select.min.js"></script>
+		<script src="./assets/js/jquery.sticky.js"></script>
+        
+        <!-- contact js -->
+        <script src="./assets/js/contact.js"></script>
+        <script src="./assets/js/jquery.form.js"></script>
+        <script src="./assets/js/jquery.validate.min.js"></script>
+        <script src="./assets/js/mail-script.js"></script>
+        <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+        
+		<!-- Jquery Plugins, main Jquery -->	
+        <script src="./assets/js/plugins.js"></script>
+        <script src="./assets/js/main.js"></script>
+        
+    </body>
+</html>

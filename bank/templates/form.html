@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}">
+
+    <!----======== CSS ======== -->
+    <link href="{% static 'form/style.css' %}" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet">
+
+    <!----===== Iconscout CSS ===== -->
+    <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
+
+    <title>Regisration Form </title>
+</head>
+<body <p style="background-image: url('{% static 'assets/img/hero/h1_hero.jpg' %}');">
+<div class="container">
+    <header>Application Form</header>
+
+    <form action="#">
+        {% csrf_token %}
+        <div class="form first">
+            <div class="details personal">
+                <span class="title">Personal Details</span>
+
+                <div class="fields">
+                    <div class="input-field">
+                        <label>Full Name</label>
+                        <input placeholder="Enter your name" required type="text">
+                    </div>
+
+                    <div class="input-field">
+                        <label>Date of Birth</label>
+                        <input placeholder="Enter birth date" required type="date">
+                    </div>
+
+                    <div class="input-field">
+                        <label>Email</label>
+                        <input placeholder="Enter your email" required type="text">
+                    </div>
+
+                    <div class="input-field">
+                        <label>Mobile Number</label>
+                        <input placeholder="Enter mobile number" required type="number">
+                    </div>
+
+                    <div class="input-field">
+                        <label>Gender</label>
+                        <select required>
+                            <option disabled selected>Select gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Others</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field">
+                        <label>Age</label>
+                        <input min="0" placeholder="Enter your Age" required type="number">
+                    </div>
+                </div>
+            </div>
+
+               <div class="details ID">
+                    <span class="title">Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Address</label>
+                            <input type="text" placeholder="Enter your address" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>District</label>
+                           <select id="district" onchange="updateBranchOptions()" required>
+                                <option for="district" selected>Select District</option>
+                                <option value="Palakkad">Palakkad</option>
+                                <option value="Thrissur">Thrissur</option>
+                                <option value="Ernakulam">Ernakulam</option>
+                               <option value="Alappuzha">Alappuzha</option>
+                               <option value="Trivandrum">Trivandrum</option>
+                        </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Branch</label>
+                            <select id="branch">
+                            </select>
+                        </div>
+
+
+
+                        <div class="input-sec">
+                            <label>Account Type</label>
+                           <select required>
+                                <option disabled selected>Select Account type</option>
+                                <option>Savings Account</option>
+                                <option>Current Account</option>
+                               <option>Fixed deposit account</option>
+                        </select>
+                        </div>
+                        <div class="input-secn">
+                            <label class="titlle">Materials required :</label>
+                        </div>
+                            <div class="input-secns">
+                                  <label><input type="checkbox" class="check"> Debit Card</label>
+                                  <label> <input type="checkbox"class="check"> Credit Card</label>
+                                 <label><input type="checkbox" class="check"> Cheque Book</label>
+                        </div>
+                    </div>
+
+                    </div>
+                    <a class="btn btn-primary" href="/message">Submit</a>
+                </div>
+            </div>
+        </form>
+    </div>
+<script>
+  function updateBranchOptions() {
+    // Get the selected district value
+    var selectedDistrict = document.getElementById("district").value;
+
+    // Get the branch dropdown
+    var branchDropdown = document.getElementById("branch");
+
+    // Clear existing options
+    branchDropdown.innerHTML = "";
+
+    // Add options based on the selected district
+    if (selectedDistrict === "Palakkad") {
+      addOption(branchDropdown, "ottapalam", "Ottapalam");
+      addOption(branchDropdown, "manisseri", "Manisseri");
+    } else if (selectedDistrict === "Thrissur") {
+      addOption(branchDropdown, "Guruvayoor", "Guruvayoor");
+      addOption(branchDropdown, "Chelakkara", "Chelakkara");
+    }else if (selectedDistrict === "Ernakulam") {
+      addOption(branchDropdown, "Kochi", "Kochi");
+      addOption(branchDropdown, "Angamaly", "Angamaly");
+    }else if (selectedDistrict === "Alappuzha") {
+      addOption(branchDropdown, " Haripad", "Haripad");
+      addOption(branchDropdown, " Kayamkulam", "Kayamkulam");
+    }else if (selectedDistrict === "Trivandrum") {
+      addOption(branchDropdown, " Varkala", " Varkala");
+      addOption(branchDropdown, "Neyyattinkara", "Neyyattinkara");
+    }
+    // You can add more conditions for other districts if needed
+  }
+
+  function addOption(selectElement, value, text) {
+    // Create a new option element
+    var option = document.createElement("option");
+    option.value = value;
+    option.text = text;
+
+    // Append the option to the select element
+    selectElement.add(option);
+  }
+
+  // Initialize the branch options on page load
+  updateBranchOptions();
+</script>
+</body>
+</html>
