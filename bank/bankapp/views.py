@@ -37,7 +37,7 @@ def login(request):
             return redirect('welcome')
         else:
             messages.info(request,'invalid username or password')
-            return redirect('login/')
+            return redirect('/login')
     return render(request,'login.html')
 
 def welcome(request):
