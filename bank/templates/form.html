@@ -21,8 +21,7 @@
 <div class="container">
     <header>Application Form</header>
 
-    <form action="#">
-        {% csrf_token %}
+    <form action="/message">
         <div class="form first">
             <div class="details personal">
                 <span class="title">Personal Details</span>
@@ -47,20 +46,18 @@
                         <label>Mobile Number</label>
                         <input placeholder="Enter mobile number" required type="number">
                     </div>
-
-                    <div class="input-field">
-                        <label>Gender</label>
-                        <select required>
-                            <option disabled selected>Select gender</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Others</option>
-                        </select>
-                    </div>
-
                     <div class="input-field">
                         <label>Age</label>
                         <input min="0" placeholder="Enter your Age" required type="number">
+                    </div>
+                     <div class="col-lg-4 ">
+                        <label>&nbsp;&nbsp; Gender : &nbsp;&nbsp;</label>
+                        <input checked="checked" name="gender" type="radio">
+                        <label class="radio-container">Male</label>
+                        &nbsp;<input name="gender" type="radio">
+                        <label class="radio-container">Female</label>
+                        &nbsp;<input name="gender" type="radio">
+                        <label class="radio-container">Others</label>
                     </div>
                 </div>
             </div>
@@ -114,7 +111,7 @@
                     </div>
 
                     </div>
-                    <a class="btn btn-primary" href="/message">Submit</a>
+                    <button onclick="/message" type="submit">Submit</button>
                 </div>
             </div>
         </form>
